@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import { cardData } from "./utils/cards.json";
+import React, { useEffect, useState } from "react";
+
 import Cards from "./components/Cards";
 const App = () => {
   
-  const [cards, setCards] = useState(cardData);
   
+
   return (
-    < div className="w-screen h-screen bg-red-200 flex justify-center items-center" >
-      <Cards cards={cards} setCards ={setCards}/>
-    </ div >
+    <div className="w-screen h-screen bg-red-200 flex justify-center items-center">
+      <Cards  />
+    </div>
   );
 };
 

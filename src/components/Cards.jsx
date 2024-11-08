@@ -1,13 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ClickContext } from "../utils/ClickContext";
 
-const Cards = ({ cards, setCards }) => {
-  function handleCardClick(id) {
-    const allCards = [...cards];
-    allCards[id - 1].hidden = !allCards[id - 1].hidden;
-    
-
-    setCards(allCards);
-  }
+const Cards = () => {
+  const {click, setClick,cards,setCards,handleCardClick} = useContext(ClickContext);
+  
+  
+  
 
   return (
     <div className=" flex gap-[20px] flex-wrap w-[40%] ">
@@ -17,7 +15,7 @@ const Cards = ({ cards, setCards }) => {
             className="w-fit h-fit"
             draggable="false"
             onClick={() => handleCardClick(card.id)}
-            key={card.id * 16}
+            key={card.id}
           >
             <img src="src\utils\png\back.png" alt="" />
           </div>
