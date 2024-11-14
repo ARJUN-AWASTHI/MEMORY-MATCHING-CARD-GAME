@@ -1,16 +1,21 @@
 {
   "cardData": [
-    { "id": 1, "path": "src/utils/png/001-ace-of-hearts.png", "name": "Ace of Hearts", "hidden": true },
-    { "id": 2, "path": "src/utils/png/002-ace-of-diamonds.png", "name": "Ace of Diamonds", "hidden": true },
-    { "id": 3, "path": "src/utils/png/003-ace-of-clubs.png", "name": "Ace of Clubs", "hidden": true },
-    { "id": 4, "path": "src/utils/png/004-ace-of-spades.png", "name": "Ace of Spades", "hidden": true },
+    { "id": 1, "cardId": 1, "path": "src/utils/png/001-ace-of-hearts.png", "name": "Ace of Hearts", "hidden": true },
+    { "id": 2, "cardId": 2, "path": "src/utils/png/002-ace-of-diamonds.png", "name": "Ace of Diamonds", "hidden": true },
+    { "id": 3, "cardId": 3, "path": "src/utils/png/003-ace-of-clubs.png", "name": "Ace of Clubs", "hidden": true },
+    { "id": 4, "cardId": 4, "path": "src/utils/png/004-ace-of-spades.png", "name": "Ace of Spades", "hidden": true },
+    { "id": 5, "cardId": 5, "path": "src/utils/png/013-king-of-hearts.png", "name": "King of Hearts", "hidden": true },
+    { "id": 6, "cardId": 6, "path": "src/utils/png/014-king-of-diamonds.png", "name": "King of Diamonds", "hidden": true },
+    { "id": 7, "cardId": 7, "path": "src/utils/png/015-king-of-clubs.png", "name": "King of Clubs", "hidden": true },
+    { "id": 8, "cardId": 8, "path": "src/utils/png/016-king-of-spades.png", "name": "King of Spades", "hidden": true },
     
-    { "id": 5, "path": "src/utils/png/013-king-of-hearts.png", "name": "King of Hearts", "hidden": true },
-    
-    { "id": 6, "path": "src/utils/png/014-king-of-diamonds.png", "name": "King of Diamonds", "hidden": true },
-   
-    { "id": 7, "path": "src/utils/png/015-king-of-clubs.png", "name": "King of Clubs", "hidden": true },
-   
-    { "id": 8, "path": "src/utils/png/016-king-of-spades.png", "name": "King of Spades", "hidden": true }
+    { "id": 9, "cardId": 1, "path": "src/utils/png/001-ace-of-hearts.png", "name": "Ace of Hearts", "hidden": true },
+    { "id": 10, "cardId": 2, "path": "src/utils/png/002-ace-of-diamonds.png", "name": "Ace of Diamonds", "hidden": true },
+    { "id": 11, "cardId": 3, "path": "src/utils/png/003-ace-of-clubs.png", "name": "Ace of Clubs", "hidden": true },
+    { "id": 12, "cardId": 4, "path": "src/utils/png/004-ace-of-spades.png", "name": "Ace of Spades", "hidden": true },
+    { "id": 13, "cardId": 5, "path": "src/utils/png/013-king-of-hearts.png", "name": "King of Hearts", "hidden": true },
+    { "id": 14, "cardId": 6, "path": "src/utils/png/014-king-of-diamonds.png", "name": "King of Diamonds", "hidden": true },
+    { "id": 15, "cardId": 7, "path": "src/utils/png/015-king-of-clubs.png", "name": "King of Clubs", "hidden": true },
+    { "id": 16, "cardId": 8, "path": "src/utils/png/016-king-of-spades.png", "name": "King of Spades", "hidden": true }
   ]
 }

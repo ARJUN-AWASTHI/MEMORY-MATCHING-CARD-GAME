@@ -8,7 +8,7 @@ const Cards = () => {
   
 
   return (
-    <div className=" flex gap-[20px] flex-wrap w-[40%] ">
+    <div className=" flex  gap-[20px] flex-wrap w-[40%] ">
       {cards.map((card) =>
         card.hidden ? (
           <div
