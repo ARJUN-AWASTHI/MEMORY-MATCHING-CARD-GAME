@@ -6,54 +6,90 @@ const ClickContextProvider = (props) => {
   const [click, setClick] = useState([]);
   const [cards, setCards] = useState(cardData);
   const [locked, setLocked] = useState(false);
-  const [lifes, setLifes] = useState([1, 1, 1]);
+  const [tries , setTries] = useState(0);
+ 
+ 
   useEffect(() => {
-    console.log("LIFES : ", lifes.length);
+    
+    shuffleArray(cards);
+
+  }, []);
+
+  useEffect(() => {
     if (click.length >= 2) {
+      setTries((prev)=>prev+1);
       setLocked(true);
-      if (click[0].cardId != click[1].cardId) {
-        console.log("Mismatched ids");
-        
-        setTimeout(() => {
-          handleCardHide(click[0].id);
-          handleCardHide(click[1].id);
-          reduceLifes();
-          setClick([]);
-          setLocked(false);
-        }, 500);
-      }
+      if (click[0].cardId != click[1].cardId) handleMismatching();
+      else handleMatching();
     }
   }, [click]);
+
+
   function handleCardClick(id) {
+    
+    console.log(id);
+    
     if (locked) return;
     const clickedCard = cards.find((card) => card.id === id);
     if (click.includes(clickedCard)) return;
     const allCards = [...cards];
+    const cardIdx = allCards.findIndex((card)=> card.id===id)
+    allCards[cardIdx].hidden = false;
     setClick([...click, clickedCard]);
-    allCards[id - 1].hidden = false;
     setCards(allCards);
   }
+
+
   function handleCardHide(id) {
+    
     const allCards = [...cards];
-    allCards[id - 1].hidden = true; // Hide the card
+    const cardIdx = allCards.findIndex((card)=> card.id===id)
+    allCards[cardIdx].hidden = true; // Hide the card
     setCards(allCards);
   }
-  function reduceLifes() {
-    const temp = [...lifes];
-    temp.pop();
-    setLifes(temp);
+
+
+  function handleMatching() {
+    setTimeout(() => {
+      click.forEach((card) => (card.found = true));
+      setClick([]);
+      setLocked(false);
+    }, 500);
   }
+
+
+  function handleMismatching() {
+    setTimeout(() => {
+      handleCardHide(click[0].id);
+      handleCardHide(click[1].id);
+
+      setClick([]);
+      setLocked(false);
+    }, 500);
+  }
+
+
+  function shuffleArray(cards){
+    for(let i = cards.length -1;i>0;i--){
+      const j = Math.floor(Math.random()*(i+1))
+      const temp = cards[i];
+      cards[i]=cards[j];
+      cards[j]=temp;
+    }
+    
+  }
+
 
   return (
     <ClickContext.Provider
       value={{
         click,
-        setClick,
+        tries,
         cards,
+        setClick,
         setCards,
         handleCardClick,
-        lifes,
-        setLifes,
+        shuffleArray
       }}
     >
       {props.children}

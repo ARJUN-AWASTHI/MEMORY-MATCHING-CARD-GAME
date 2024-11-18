@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Cards from "./components/Cards";
-import UserLife from "./components/UserLife";
+import { ClickContext } from "./utils/ClickContext";
+import NumOfTries from "./components/NumOfTries";
+
 const App = () => {
   
   
-
   return (
     <div className="w-screen h-screen bg-red-200 flex justify-center items-center">
-      <Cards  />
-      <UserLife/>
+      <Cards />
+      <NumOfTries/>
     </div>
-  )
-}
+  );
+};
 
 export default App;
